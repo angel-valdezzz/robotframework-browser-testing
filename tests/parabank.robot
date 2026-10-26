@@ -11,7 +11,7 @@ Logout And Login
     Register Customer
     Click    text=Log Out
     Log In
-    Get Text    css=#rightPanel h1    ==    Accounts Overview
+    Get Text    css=#rightPanel h1:visible    ==    Accounts Overview
 
 Required Fields
     Click    text=Register
@@ -33,7 +33,7 @@ Open A Savings Account
     Wait For Elements State    css=#fromAccountId option    attached
     Select Options By    id=type    value    1
     Click    css=#openAccountForm input.button
-    ${id}=    Get Text    id=newAccountId    matches    ^\d+$
+    ${id}=    Get Text    id=newAccountId    matches    ^[0-9]+$
     Click    id=newAccountId
     Get Text    id=accountId    ==    ${id}
     Get Text    id=accountType    ==    SAVINGS
