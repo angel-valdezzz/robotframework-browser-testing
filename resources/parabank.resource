@@ -11,7 +11,7 @@ Start Customer Browser
     New Browser    chromium    headless=True
     New Context
     New Page    ${BASE_URL}/index.htm
-    ${unique}=    Evaluate    uuid.uuid4().hex    modules=uuid
+    ${unique}=    Evaluate    uuid.uuid4().hex[:18]    modules=uuid
     Set Test Variable    ${USERNAME}    qa${unique}
 
 Fill Registration
